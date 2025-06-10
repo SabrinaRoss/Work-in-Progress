@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://caloqboa71xt3"]
+
+[ext_resource type="Texture2D" uid="uid://ccb4o1ve6dc72" path="res://art/Hand Transparent Press.png" id="1_cmdsa"]
+[ext_resource type="Script" uid="uid://5jjbfg3p0jex" path="res://scripts/hand.gd" id="1_k7pjy"]
+[ext_resource type="Texture2D" uid="uid://c3jfv0ggujsw7" path="res://art/Hand Transparent Hover.png" id="2_k7pjy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1v21"]
+size = Vector2(77, 44)
+
+[node name="Hand" type="Node2D"]
+script = ExtResource("1_k7pjy")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(431, 2086)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-431.5, -2094)
+shape = SubResource("RectangleShape2D_m1v21")
+
+[node name="Push" type="Sprite2D" parent="Area2D"]
+visible = false
+position = Vector2(-118.75, -245.25)
+scale = Vector2(1.13276, 1.1042)
+texture = ExtResource("1_cmdsa")
+
+[node name="Idle" type="Sprite2D" parent="Area2D"]
+position = Vector2(-330, -278)
+texture = ExtResource("2_k7pjy")
+metadata/_edit_lock_ = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

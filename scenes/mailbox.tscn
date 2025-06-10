@@ -1,0 +1,308 @@
+[gd_scene load_steps=18 format=3 uid="uid://cb7hmajfjouwv"]
+
+[ext_resource type="Script" uid="uid://tof13tosf30l" path="res://scripts/notes.gd" id="1_xb57f"]
+[ext_resource type="Texture2D" uid="uid://5jm0qbbg2dgn" path="res://art/mailbox-Sheet.png" id="2_xb57f"]
+[ext_resource type="Script" uid="uid://brofp8pk1g2hc" path="res://scripts/actual_notes.gd" id="3_8jpdh"]
+[ext_resource type="Texture2D" uid="uid://dp6br1qaa3qo2" path="res://art/notes_actual paper.png" id="4_0r8m2"]
+[ext_resource type="FontFile" uid="uid://blaxo84co62o2" path="res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="5_jrgls"]
+[ext_resource type="Script" uid="uid://b67ygj7urvw66" path="res://scripts/button_manager_instructions.gd" id="6_p65c8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dq583"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p8m01"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r6urf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sojyo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rcajc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ns3kk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8883o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ct5e1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4vm48"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bjj50"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ctsqu"]
+
+[node name="Mailbox" type="Area2D"]
+texture_filter = 1
+script = ExtResource("1_xb57f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_xb57f")
+hframes = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-53, -13, -54, -7, -55, 0, -55, 17, -56, 18, -56, 29, -55, 30, -52, 31, -55, 36, -47, 33, -36, 38, -23, 35, 2, 28, 28, 21, 47, 15, 47, -34, 43, -42, 40, -50, 29, -49, 24, -44, 11, -41, -5, -36, -7, -40, 14, -46, 13, -59, -14, -55, -13, -33, -38, -27, -50, -26, -52, -22, -51, -16)
+
+[node name="Actual Notes" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 68.0
+offset_top = -121.0
+offset_right = 209.0
+offset_bottom = -36.0
+script = ExtResource("3_8jpdh")
+what_sheet = 1
+
+[node name="TextureRect" type="TextureRect" parent="Actual Notes"]
+layout_mode = 0
+offset_left = -74.0
+offset_top = -40.0
+offset_right = 120.0
+offset_bottom = 176.0
+texture = ExtResource("4_0r8m2")
+
+[node name="LineEdit" type="LineEdit" parent="Actual Notes"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = -32.0
+offset_top = -7.0
+offset_right = 91.0
+offset_bottom = 18.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jrgls")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dq583")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_p8m01")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r6urf")
+text = "Letter"
+max_length = 19
+editable = false
+
+[node name="LineEdit2" type="LineEdit" parent="Actual Notes"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = -32.0
+offset_top = 23.0
+offset_right = 91.0
+offset_bottom = 48.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jrgls")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sojyo")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_rcajc")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r6urf")
+max_length = 19
+editable = false
+metadata/_edit_lock_ = true
+
+[node name="LineEdit3" type="LineEdit" parent="Actual Notes"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = -32.0
+offset_top = 52.0
+offset_right = 91.0
+offset_bottom = 77.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jrgls")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ns3kk")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_8883o")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r6urf")
+max_length = 19
+editable = false
+metadata/_edit_lock_ = true
+
+[node name="LineEdit4" type="LineEdit" parent="Actual Notes"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = -32.0
+offset_top = 81.0
+offset_right = 91.0
+offset_bottom = 106.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jrgls")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ct5e1")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_4vm48")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r6urf")
+max_length = 19
+metadata/_edit_lock_ = true
+
+[node name="LineEdit5" type="LineEdit" parent="Actual Notes"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = -32.0
+offset_top = 110.0
+offset_right = 91.0
+offset_bottom = 135.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jrgls")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bjj50")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_ctsqu")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r6urf")
+max_length = 19
+editable = false
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="Actual Notes"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 86.0
+offset_top = 144.0
+offset_right = 106.0
+offset_bottom = 161.0
+theme_override_fonts/font = ExtResource("5_jrgls")
+theme_override_font_sizes/font_size = 7
+text = "Flip"
+
+[node name="Button Manager Instructions" type="Node2D" parent="."]
+script = ExtResource("6_p65c8")
+
+[node name="Intructions Page" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 68.0
+offset_top = -121.0
+offset_right = 209.0
+offset_bottom = -36.0
+script = ExtResource("3_8jpdh")
+what_sheet = 2
+
+[node name="TextureRect" type="TextureRect" parent="Intructions Page"]
+layout_mode = 0
+offset_left = -74.0
+offset_top = -40.0
+offset_right = 120.0
+offset_bottom = 176.0
+texture = ExtResource("4_0r8m2")
+metadata/_edit_lock_ = true
+
+[node name="LineEdit" type="LineEdit" parent="Intructions Page"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = -32.0
+offset_top = -4.0
+offset_right = 91.0
+offset_bottom = 21.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jrgls")
+theme_override_font_sizes/font_size = 9
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dq583")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_p8m01")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r6urf")
+text = "Instructions (A, B, C, D, E)"
+max_length = 38
+editable = false
+
+[node name="LineEdit2" type="LineEdit" parent="Intructions Page"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = -32.0
+offset_top = 23.0
+offset_right = 91.0
+offset_bottom = 48.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jrgls")
+theme_override_font_sizes/font_size = 6
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sojyo")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_rcajc")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r6urf")
+max_length = 44
+editable = false
+metadata/_edit_lock_ = true
+
+[node name="LineEdit3" type="LineEdit" parent="Intructions Page"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = -32.0
+offset_top = 52.0
+offset_right = 91.0
+offset_bottom = 77.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jrgls")
+theme_override_font_sizes/font_size = 6
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ns3kk")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_8883o")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r6urf")
+max_length = 43
+editable = false
+metadata/_edit_lock_ = true
+
+[node name="LineEdit4" type="LineEdit" parent="Intructions Page"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = -32.0
+offset_top = 81.0
+offset_right = 91.0
+offset_bottom = 106.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jrgls")
+theme_override_font_sizes/font_size = 9
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ct5e1")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_4vm48")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r6urf")
+max_length = 32
+metadata/_edit_lock_ = true
+
+[node name="LineEdit5" type="LineEdit" parent="Intructions Page"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = -32.0
+offset_top = 110.0
+offset_right = 91.0
+offset_bottom = 135.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jrgls")
+theme_override_font_sizes/font_size = 6
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bjj50")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_ctsqu")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r6urf")
+max_length = 47
+editable = false
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="Intructions Page"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 86.0
+offset_top = 144.0
+offset_right = 106.0
+offset_bottom = 161.0
+theme_override_fonts/font = ExtResource("5_jrgls")
+theme_override_font_sizes/font_size = 7
+text = "Flip"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="pressed" from="Actual Notes/Button" to="Button Manager Instructions" method="_on_button_pressed"]
+[connection signal="pressed" from="Intructions Page/Button" to="Button Manager Instructions" method="_on_button_pressed"]

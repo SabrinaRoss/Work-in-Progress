@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://iii0y5cx56bv"
+path="res://.godot/imported/First Instruction set.mp3-3f0f116beb278245a0662b8482e94f93.mp3str"
+
+[deps]
+
+source_file="res://audio/First Instruction set.mp3"
+dest_files=["res://.godot/imported/First Instruction set.mp3-3f0f116beb278245a0662b8482e94f93.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

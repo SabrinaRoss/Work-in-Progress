@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://buink2djvh0c2"]
+
+[ext_resource type="Script" uid="uid://b4s6hb8vhxpft" path="res://scripts/phone.gd" id="1_eud1m"]
+[ext_resource type="Texture2D" uid="uid://dscjgm5ys06c6" path="res://art/telephone_for_rowan.png" id="1_ewalk"]
+[ext_resource type="Texture2D" uid="uid://bd4yncrwqrm2i" path="res://art/telephone_for_rowan_new_call.png" id="2_eud1m"]
+
+[node name="Phone" type="Area2D"]
+script = ExtResource("1_eud1m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_ewalk")
+
+[node name="New msg" type="Sprite2D" parent="."]
+texture = ExtResource("2_eud1m")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-178, -165, 44, -232, 131, -244, 150, -210, 134, -141, 234, 27, 245, 106, 75, 158, 42, 112, 59, 170, 18, 189, -199, -68, -201, -137)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

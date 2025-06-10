@@ -1,0 +1,151 @@
+[gd_scene load_steps=17 format=3 uid="uid://8d2uc6oy3kgr"]
+
+[ext_resource type="Script" uid="uid://tof13tosf30l" path="res://scripts/notes.gd" id="1_00aod"]
+[ext_resource type="Texture2D" uid="uid://bwe1wshilce2j" path="res://art/Open Notes-Sheet.png" id="1_237bn"]
+[ext_resource type="Script" uid="uid://brofp8pk1g2hc" path="res://scripts/actual_notes.gd" id="3_2rdvi"]
+[ext_resource type="Texture2D" uid="uid://dp6br1qaa3qo2" path="res://art/notes_actual paper.png" id="4_uy50o"]
+[ext_resource type="FontFile" uid="uid://blaxo84co62o2" path="res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="5_dq583"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dq583"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p8m01"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r6urf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sojyo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rcajc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ns3kk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8883o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ct5e1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4vm48"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bjj50"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ctsqu"]
+
+[node name="Notes" type="Area2D"]
+texture_filter = 1
+script = ExtResource("1_00aod")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_237bn")
+hframes = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(16, -16, 6, -16, 6, -14, 4, -14, 4, -12, 2, -12, 2, -10, 1, -10, 1, 10, 2, 10, 2, 12, 4, 12, 4, 14, 6, 14, 6, 16, 16, 16)
+
+[node name="Actual Notes" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -110.0
+offset_top = -67.0
+offset_right = -2.0
+offset_bottom = 63.0
+script = ExtResource("3_2rdvi")
+
+[node name="TextureRect" type="TextureRect" parent="Actual Notes"]
+layout_mode = 0
+offset_left = -74.0
+offset_top = -40.0
+offset_right = 120.0
+offset_bottom = 176.0
+texture = ExtResource("4_uy50o")
+
+[node name="LineEdit" type="LineEdit" parent="Actual Notes"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = -32.0
+offset_top = -7.0
+offset_right = 91.0
+offset_bottom = 18.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_dq583")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dq583")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_p8m01")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r6urf")
+text = "Notes"
+placeholder_text = "Notes"
+max_length = 19
+editable = false
+
+[node name="LineEdit2" type="LineEdit" parent="Actual Notes"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = -32.0
+offset_top = 23.0
+offset_right = 91.0
+offset_bottom = 48.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_dq583")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sojyo")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_rcajc")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r6urf")
+max_length = 19
+
+[node name="LineEdit3" type="LineEdit" parent="Actual Notes"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = -32.0
+offset_top = 52.0
+offset_right = 91.0
+offset_bottom = 77.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_dq583")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ns3kk")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_8883o")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r6urf")
+max_length = 19
+
+[node name="LineEdit4" type="LineEdit" parent="Actual Notes"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = -32.0
+offset_top = 81.0
+offset_right = 91.0
+offset_bottom = 106.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_dq583")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ct5e1")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_4vm48")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r6urf")
+max_length = 19
+
+[node name="LineEdit5" type="LineEdit" parent="Actual Notes"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = -32.0
+offset_top = 110.0
+offset_right = 91.0
+offset_bottom = 135.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_dq583")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bjj50")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_ctsqu")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r6urf")
+max_length = 19
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

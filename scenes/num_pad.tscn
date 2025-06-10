@@ -1,0 +1,120 @@
+[gd_scene load_steps=12 format=3 uid="uid://dxmulhdk4vpk5"]
+
+[ext_resource type="Script" uid="uid://vxk8wffnfdw8" path="res://scripts/num_pad.gd" id="1_06xxk"]
+[ext_resource type="Texture2D" uid="uid://mtissf2pkvcb" path="res://art/Num Pad Aseprite-Sheet.png" id="1_qv5pt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qv5pt"]
+size = Vector2(32, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06xxk"]
+size = Vector2(29, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eg08q"]
+size = Vector2(27, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xs6fp"]
+size = Vector2(31, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7pyb5"]
+size = Vector2(30, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xueb"]
+size = Vector2(27, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlpe1"]
+size = Vector2(33, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj17a"]
+size = Vector2(30, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s36f0"]
+size = Vector2(28, 27)
+
+[node name="NumPad" type="Node2D"]
+script = ExtResource("1_06xxk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+texture = ExtResource("1_qv5pt")
+hframes = 10
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="1"]
+position = Vector2(-33, -30.5)
+shape = SubResource("RectangleShape2D_qv5pt")
+
+[node name="2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="2"]
+position = Vector2(0.5, -30)
+shape = SubResource("RectangleShape2D_06xxk")
+
+[node name="3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3"]
+position = Vector2(31.5, -30.5)
+shape = SubResource("RectangleShape2D_eg08q")
+
+[node name="4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="4"]
+position = Vector2(-32.5, 0)
+shape = SubResource("RectangleShape2D_xs6fp")
+
+[node name="5" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="5"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_7pyb5")
+
+[node name="6" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="6"]
+position = Vector2(31.5, -0.5)
+shape = SubResource("RectangleShape2D_0xueb")
+
+[node name="7" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="7"]
+position = Vector2(-30.5, 29.5)
+shape = SubResource("RectangleShape2D_wlpe1")
+
+[node name="8" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="8"]
+position = Vector2(2, 29)
+shape = SubResource("RectangleShape2D_pj17a")
+
+[node name="9" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="9"]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(32, 29.5)
+shape = SubResource("RectangleShape2D_s36f0")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.03
+
+[connection signal="area_entered" from="1" to="." method="_on__area_entered"]
+[connection signal="area_exited" from="1" to="." method="_on__area_exited"]
+[connection signal="area_entered" from="2" to="." method="_on__area_entered_2"]
+[connection signal="area_exited" from="2" to="." method="_on__area_exited_2"]
+[connection signal="area_entered" from="3" to="." method="_on__area_entered_3"]
+[connection signal="area_exited" from="3" to="." method="_on__area_exited_3"]
+[connection signal="area_entered" from="4" to="." method="_on__area_entered_4"]
+[connection signal="area_exited" from="4" to="." method="_on__area_exited_4"]
+[connection signal="area_entered" from="5" to="." method="_on__area_entered_5"]
+[connection signal="area_exited" from="5" to="." method="_on__area_exited_5"]
+[connection signal="area_entered" from="6" to="." method="_on__area_entered_6"]
+[connection signal="area_exited" from="6" to="." method="_on__area_exited_6"]
+[connection signal="area_entered" from="7" to="." method="_on__area_entered_7"]
+[connection signal="area_exited" from="7" to="." method="_on__area_exited_7"]
+[connection signal="area_entered" from="8" to="." method="_on__area_entered_8"]
+[connection signal="area_exited" from="8" to="." method="_on__area_exited_8"]
+[connection signal="area_entered" from="9" to="." method="_on__area_entered_9"]
+[connection signal="area_exited" from="9" to="." method="_on__area_exited_9"]
+[connection signal="timeout" from="Timer" to="." method="make_true_in_area"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://6kp7k7gf7l0l"
+path="res://.godot/imported/Second Instruction Set.mp3-e01357ccd989dae3c382864cf9375e30.mp3str"
+
+[deps]
+
+source_file="res://audio/Second Instruction Set.mp3"
+dest_files=["res://.godot/imported/Second Instruction Set.mp3-e01357ccd989dae3c382864cf9375e30.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

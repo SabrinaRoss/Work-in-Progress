@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://nbb38v34oo6m"
+path="res://.godot/imported/FOURTH LAST ANS.mp3-fe46a0474789924e1b4709243de1f69a.mp3str"
+
+[deps]
+
+source_file="res://audio/FOURTH LAST ANS.mp3"
+dest_files=["res://.godot/imported/FOURTH LAST ANS.mp3-fe46a0474789924e1b4709243de1f69a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

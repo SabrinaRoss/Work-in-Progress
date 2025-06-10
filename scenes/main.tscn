@@ -1,0 +1,96 @@
+[gd_scene load_steps=14 format=3 uid="uid://dtvi56kkbvivl"]
+
+[ext_resource type="Script" uid="uid://b6vcqrt7j0ii" path="res://scripts/main.gd" id="1_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://caloqboa71xt3" path="res://scenes/hand.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://8d2uc6oy3kgr" path="res://scenes/notes.tscn" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://dxmulhdk4vpk5" path="res://scenes/num_pad.tscn" id="2_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://b51cml0df4h32" path="res://art/background-Sheet.png" id="2_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://ul55itelj7m" path="res://scenes/typewritter_thing.tscn" id="3_tefeu"]
+[ext_resource type="PackedScene" uid="uid://cb7hmajfjouwv" path="res://scenes/mailbox.tscn" id="4_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://buink2djvh0c2" path="res://scenes/phone.tscn" id="6_choun"]
+[ext_resource type="AudioStream" uid="uid://iii0y5cx56bv" path="res://audio/First Instruction set.mp3" id="9_85g3d"]
+[ext_resource type="AudioStream" uid="uid://qe3lhh0dnshr" path="res://audio/Wrong Answer new.mp3" id="9_ya4ey"]
+
+[sub_resource type="Animation" id="Animation_85g3d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_tipki"]
+resource_name = "rain"
+length = 0.46
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_choun"]
+_data = {
+&"RESET": SubResource("Animation_85g3d"),
+&"rain": SubResource("Animation_tipki")
+}
+
+[node name="Main" type="Node2D"]
+scale = Vector2(0.41, 0.41)
+script = ExtResource("1_jyhfs")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(1420.54, 790.439)
+scale = Vector2(2.46265, 2.46853)
+texture = ExtResource("2_o6xl0")
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_choun")
+}
+autoplay = "rain"
+
+[node name="NumPad" parent="." instance=ExtResource("2_0wfyh")]
+position = Vector2(2231.71, 619.512)
+scale = Vector2(6.01, 6.01)
+
+[node name="typewritter thing" parent="." instance=ExtResource("3_tefeu")]
+position = Vector2(2214.63, 1131.71)
+scale = Vector2(7.8, 7.8)
+
+[node name="Notes" parent="." instance=ExtResource("1_sugp2")]
+position = Vector2(2697.56, 780.488)
+scale = Vector2(7.05, 7.05)
+
+[node name="Phone" parent="." instance=ExtResource("6_choun")]
+position = Vector2(1185.37, 1180.49)
+scale = Vector2(1.08, 1.08)
+
+[node name="Mailbox" parent="." instance=ExtResource("4_tbgi4")]
+position = Vector2(360.976, 1265.85)
+scale = Vector2(5.515, 5.515)
+
+[node name="Hand" parent="." instance=ExtResource("1_o5qli")]
+scale = Vector2(0.59, 0.59)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_ya4ey")
+volume_db = 4.952
+
+[node name="Start of Game" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_85g3d")
